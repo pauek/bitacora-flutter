@@ -1,6 +1,12 @@
+import 'package:bitacora/model/entry.dart';
+import 'package:bitacora/pages/log_page.dart';
 import 'package:flutter/material.dart';
+import 'package:hive/hive.dart';
 
-void main() => runApp(MyApp());
+void main() {
+  Hive.registerAdapter(EntryAdapter(), 0);
+  runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
   @override
@@ -10,9 +16,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.teal,
       ),
-      home: Scaffold(
-        body: Center(child: Text('bitacora')),
-      ),
+      home: LogPage(),
     );
   }
 }
