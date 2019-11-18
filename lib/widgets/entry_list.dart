@@ -12,6 +12,7 @@ class EntryList extends StatelessWidget {
       itemCount: box.length,
       itemBuilder: (context, index) {
         return Container(
+          padding: EdgeInsets.all(6),
           child: Text('${box.getAt(index).text}'),
         );
       },

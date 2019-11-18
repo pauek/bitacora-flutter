@@ -15,7 +15,7 @@ class EntryAdapter extends TypeAdapter<Entry> {
     };
     return Entry()
       ..text = fields[0] as String
-      ..created = fields[1] as DateTime;
+      ..time = fields[1] as DateTime;
   }
 
   @override
@@ -25,6 +25,6 @@ class EntryAdapter extends TypeAdapter<Entry> {
       ..writeByte(0)
       ..write(obj.text)
       ..writeByte(1)
-      ..write(obj.created);
+      ..write(obj.time);
   }
 }
