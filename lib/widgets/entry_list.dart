@@ -1,4 +1,5 @@
 import 'package:bitacora/model/entry.dart';
+import 'package:bitacora/widgets/entry_box.dart';
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
 
@@ -10,12 +11,13 @@ class EntryList extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView.builder(
       itemCount: box.length,
-      itemBuilder: (context, index) {
-        return Container(
-          padding: EdgeInsets.all(6),
-          child: Text('${box.getAt(index).text}'),
-        );
-      },
+      itemBuilder: (context, index) => Row(
+        children: <Widget>[
+          EntryBox(box.getAt(index)),
+        ],
+      ),
     );
   }
 }
+
+
